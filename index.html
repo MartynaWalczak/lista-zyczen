@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista życzeń</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Lista życzeń ⭐
+</h1>
+      <p class="muted">Dodaj zdjęcie, nazwę i link — wszystko zapisuje się w Twojej przeglądarce.</p>
+    </header>
+
+    <section class="card form-card" aria-labelledby="form-title">
+      <h2 id="form-title">Dodaj nową rzecz</h2>
+
+      <form id="wishForm">
+        <div class="row">
+          <label for="name">Nazwa</label>
+          <input id="name" name="name" required placeholder="Np. Książka 'Javascript dla każdego'">
+        </div>
+
+        <div class="row">
+          <label for="link">Link</label>
+          <input id="link" name="link" type="url" placeholder="https://..." >
+        </div>
+
+        <div class="row">
+          <label for="image">Zdjęcie</label>
+          <input id="image" name="image" type="file" accept="image/*">
+          <small class="muted">Plik zostanie zapisany lokalnie (nie wysyłamy nigdzie).</small>
+        </div>
+
+        <div class="row preview-row" aria-hidden="true">
+          <img id="preview" alt="" class="preview" style="display:none;">
+        </div>
+
+        <div class="row actions">
+          <button type="submit" id="addBtn">Dodaj do listy</button>
+          <button type="button" id="clearBtn" class="secondary">Wyczyść formularz</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card list-card" aria-labelledby="list-title">
+      <h2 id="list-title">Twoja lista (0)</h2>
+      <ul id="wishList" class="wish-list"></ul>
+      <div class="empty muted" id="emptyMsg">Brak pozycji. Dodaj coś powyżej ✨
+</div>
+    </section>
+
+    <footer class="muted small">
+      Dane są przechowywane lokalnie w przeglądarce. Żeby udostępnić komuś listę — opublikuj stronę (np. GitHub Pages) i wyślij link.
+    </footer>
+     </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
